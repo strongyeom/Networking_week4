@@ -127,13 +127,92 @@
                     <view key="view" contentMode="scaleToFill" id="WFY-rG-3aR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-9x-RAl">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="K6r-Yh-AuN"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vq6-9U-aAS" id="NVW-TF-uKa"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZaR-jP-SAo">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="148" id="Nnq-uu-8f9" customClass="VideoTableViewCell" customModule="Networking_week4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="148"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nnq-uu-8f9" id="LNc-Lg-2FV">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="148"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qig-fS-vTf">
+                                                    <rect key="frame" x="16" y="8" width="176" height="132"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="qig-fS-vTf" secondAttribute="height" multiplier="4:3" id="iMD-Ex-1yJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huv-kH-BQ0">
+                                                    <rect key="frame" x="200" y="7.9999999999999982" width="177" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4분 30초 | 22.08.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKT-Gs-17O">
+                                                    <rect key="frame" x="200" y="32.333333333333336" width="177" height="36.000000000000007"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="nBz-UH-i2e"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OKT-Gs-17O" firstAttribute="leading" secondItem="huv-kH-BQ0" secondAttribute="leading" id="0gA-uF-TeQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="qig-fS-vTf" secondAttribute="bottom" constant="8" id="1Fe-Ms-Gkd"/>
+                                                <constraint firstItem="qig-fS-vTf" firstAttribute="leading" secondItem="LNc-Lg-2FV" secondAttribute="leading" constant="16" id="1Jb-gK-qRx"/>
+                                                <constraint firstItem="huv-kH-BQ0" firstAttribute="leading" secondItem="qig-fS-vTf" secondAttribute="trailing" constant="8" id="2Pa-x4-yBU"/>
+                                                <constraint firstItem="OKT-Gs-17O" firstAttribute="trailing" secondItem="huv-kH-BQ0" secondAttribute="trailing" id="9a0-LU-UNI"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OKT-Gs-17O" secondAttribute="bottom" constant="8" id="IpS-hk-xBB"/>
+                                                <constraint firstItem="qig-fS-vTf" firstAttribute="top" secondItem="LNc-Lg-2FV" secondAttribute="top" constant="8" id="Mia-Jm-S2A"/>
+                                                <constraint firstItem="huv-kH-BQ0" firstAttribute="top" secondItem="qig-fS-vTf" secondAttribute="top" id="WCQ-K5-95z"/>
+                                                <constraint firstAttribute="trailing" secondItem="huv-kH-BQ0" secondAttribute="trailing" constant="16" id="aNI-K7-MTf"/>
+                                                <constraint firstItem="OKT-Gs-17O" firstAttribute="top" secondItem="huv-kH-BQ0" secondAttribute="bottom" constant="4" id="uYZ-7q-P7N"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playtime" destination="OKT-Gs-17O" id="xan-Lg-vtl"/>
+                                            <outlet property="videoImage" destination="qig-fS-vTf" id="ED3-1M-10o"/>
+                                            <outlet property="videoname" destination="huv-kH-BQ0" id="f25-sh-jLs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7bA-eo-8CU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZaR-jP-SAo" firstAttribute="top" secondItem="X4d-9x-RAl" secondAttribute="bottom" id="5pI-ap-Eg2"/>
+                            <constraint firstItem="7bA-eo-8CU" firstAttribute="trailing" secondItem="ZaR-jP-SAo" secondAttribute="trailing" id="OzC-2t-ELk"/>
+                            <constraint firstItem="7bA-eo-8CU" firstAttribute="bottom" secondItem="ZaR-jP-SAo" secondAttribute="bottom" id="cSH-dL-2uj"/>
+                            <constraint firstItem="ZaR-jP-SAo" firstAttribute="leading" secondItem="7bA-eo-8CU" secondAttribute="leading" id="eq3-XK-eAU"/>
+                            <constraint firstItem="X4d-9x-RAl" firstAttribute="leading" secondItem="7bA-eo-8CU" secondAttribute="leading" id="iMe-PC-DGm"/>
+                            <constraint firstItem="X4d-9x-RAl" firstAttribute="top" secondItem="7bA-eo-8CU" secondAttribute="top" id="oDl-3C-lFI"/>
+                            <constraint firstItem="X4d-9x-RAl" firstAttribute="trailing" secondItem="7bA-eo-8CU" secondAttribute="trailing" id="r1a-IG-idX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="X4d-9x-RAl" id="CbA-mC-0cO"/>
+                        <outlet property="tableView" destination="ZaR-jP-SAo" id="A8M-rk-ps5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1UI-lk-O4h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="6"/>
+            <point key="canvasLocation" x="1669.4656488549617" y="5.6338028169014089"/>
         </scene>
     </scenes>
     <resources>
