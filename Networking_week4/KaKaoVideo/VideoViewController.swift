@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import Kingfisher
 
 // Todo - pagnation 구현
 
@@ -87,7 +87,7 @@ class VideoViewController: UIViewController {
                         let auhor = item["author"].stringValue
                         let dateTime = item["datetime"].stringValue
                         let playTime = item["play_time"].intValue
-                        let thumnail = item["thumnail"].stringValue
+                        let thumnail = item["thumbnail"].stringValue
                         let title = item["title"].stringValue
                         let link = item["url"].stringValue
                         
@@ -171,6 +171,11 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
         let row = videoList[indexPath.row]
         cell.videoname.text = row.title
         cell.playtime.text = row.contents
+        
+        if let url = URL(string: row.thumnail) {
+            cell.videoImage.kf.setImage(with: url)
+        }
+        
         return cell
     }
 }
