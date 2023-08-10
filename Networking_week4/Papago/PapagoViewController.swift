@@ -12,6 +12,11 @@ import SwiftyJSON
 
 class PapagoViewController: UIViewController {
     
+    
+    @IBOutlet var sourcePicker: UIPickerView!
+    @IBOutlet var targetPicker: UIPickerView!
+    
+    
     @IBOutlet var originalTextView: UITextView!
     
     @IBOutlet var requestBtn: UIButton!
@@ -26,6 +31,22 @@ class PapagoViewController: UIViewController {
     
     let textViewPlaceHolder: String = "통역 진행시켜! 영차!"
     
+    
+    var pickerArray: [String:String] = [
+        "ko": "한국어",
+        "en":"영어",
+        "ja":"일본어",
+        "zh-CN":"중국어 간체",
+        "zh-TW":"중국어 번체",
+        "vi":"베트남어",
+        "id":"인도네시아어",
+        "th":"태국어",
+        "de":"독일어",
+        "ru":"러시아어",
+        "es":"스페인어",
+        "it":"이탈리아어",
+        "fr":"프랑스어"]
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +55,15 @@ class PapagoViewController: UIViewController {
         settingOriginalTextView()
         translateTextView.isEditable = false
         callRequest()
+        settingPicker()
+    }
+    
+    func settingPicker() {
+        sourcePicker.delegate = self
+        targetPicker.delegate = self
+        sourcePicker.dataSource = self
+        targetPicker.dataSource = self
+        
     }
     
     @IBAction func tapGestureClicked(_ sender: UITapGestureRecognizer) {
@@ -135,4 +165,37 @@ extension PapagoViewController: UITextViewDelegate {
         textView.text = textViewPlaceHolder
         textView.textColor = .lightGray
     }
+}
+
+extension PapagoViewController: UIPickerViewDelegate {
+    
+}
+
+extension PapagoViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerArray.count
+    }
+    
+    // value가 바뀌면 어떤걸 해줄것이냐? 휠 드르륵
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+      
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        print(#function)
+        // 딕셔너리에서 벨류 값만 보여주는 방법은? count 있음
+        print("pickerArray.values", pickerArray.values)
+        return "\(pickerArray.values)"
+    }
+    
+    
+    
+    
 }

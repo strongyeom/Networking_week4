@@ -119,19 +119,19 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="코피티와 채팅하기"/>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="608-yu-uyP">
-                                <rect key="frame" x="20" y="59" width="353" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="608-yu-uyP">
+                                <rect key="frame" x="5" y="59" width="383" height="60"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9UB-Zm-G7m">
-                                        <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127.66666666666667" height="60"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIc-MS-CoT">
-                                        <rect key="frame" x="120.33333333333334" y="0.0" width="112.33333333333334" height="60"/>
+                                        <rect key="frame" x="127.66666666666666" y="0.0" width="127.66666666666666" height="60"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="arrow.left.arrow.right" catalog="system"/>
                                     </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edm-lM-R2j">
-                                        <rect key="frame" x="240.66666666666671" y="0.0" width="112.33333333333334" height="60"/>
+                                        <rect key="frame" x="255.33333333333329" y="0.0" width="127.66666666666666" height="60"/>
                                     </pickerView>
                                 </subviews>
                                 <constraints>
@@ -152,8 +152,8 @@
                             <constraint firstItem="608-yu-uyP" firstAttribute="top" secondItem="Zwp-Av-f4k" secondAttribute="top" id="2rk-QC-xXl"/>
                             <constraint firstItem="RTI-XU-NiE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vhO-lu-yNe" secondAttribute="trailing" constant="10" id="4wx-4E-uFn"/>
                             <constraint firstItem="Tjx-WP-j2u" firstAttribute="top" secondItem="W57-HR-BwU" secondAttribute="bottom" constant="50" id="7aH-jJ-uLx"/>
-                            <constraint firstItem="608-yu-uyP" firstAttribute="leading" secondItem="Zwp-Av-f4k" secondAttribute="leading" constant="20" id="BO9-00-kUq"/>
-                            <constraint firstItem="Zwp-Av-f4k" firstAttribute="trailing" secondItem="608-yu-uyP" secondAttribute="trailing" constant="20" id="CaN-zk-a5b"/>
+                            <constraint firstItem="608-yu-uyP" firstAttribute="leading" secondItem="Zwp-Av-f4k" secondAttribute="leading" constant="5" id="BO9-00-kUq"/>
+                            <constraint firstItem="Zwp-Av-f4k" firstAttribute="trailing" secondItem="608-yu-uyP" secondAttribute="trailing" constant="5" id="CaN-zk-a5b"/>
                             <constraint firstItem="Tjx-WP-j2u" firstAttribute="centerX" secondItem="Zwp-Av-f4k" secondAttribute="centerX" id="ELG-lJ-tnT"/>
                             <constraint firstItem="Zwp-Av-f4k" firstAttribute="bottom" secondItem="Tjx-WP-j2u" secondAttribute="bottom" constant="20" id="JEk-Cf-5s5"/>
                             <constraint firstItem="W57-HR-BwU" firstAttribute="top" secondItem="vhO-lu-yNe" secondAttribute="bottom" id="L1C-M3-r8e"/>
@@ -170,6 +170,8 @@
                         <outlet property="cancelBtn" destination="RTI-XU-NiE" id="73t-oU-1QV"/>
                         <outlet property="originalTextView" destination="vhO-lu-yNe" id="tmY-24-kP5"/>
                         <outlet property="requestBtn" destination="RTI-XU-NiE" id="yUj-pU-hOh"/>
+                        <outlet property="sourcePicker" destination="9UB-Zm-G7m" id="9Qg-NY-euA"/>
+                        <outlet property="targetPicker" destination="edm-lM-R2j" id="7ae-CP-nxl"/>
                         <outlet property="textVIewHeightConstainsts" destination="dWB-tk-HNb" id="8PL-Vf-HsN"/>
                         <outlet property="translateTextView" destination="W57-HR-BwU" id="idb-UN-6TQ"/>
                     </connections>
