@@ -140,6 +140,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTI-XU-NiE">
                                 <rect key="frame" x="336.66666666666669" y="129" width="46.333333333333314" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="xmark" catalog="system"/>
                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
@@ -150,6 +151,7 @@
                         <constraints>
                             <constraint firstItem="608-yu-uyP" firstAttribute="top" secondItem="Zwp-Av-f4k" secondAttribute="top" id="2rk-QC-xXl"/>
                             <constraint firstItem="RTI-XU-NiE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vhO-lu-yNe" secondAttribute="trailing" constant="10" id="4wx-4E-uFn"/>
+                            <constraint firstItem="Tjx-WP-j2u" firstAttribute="top" secondItem="W57-HR-BwU" secondAttribute="bottom" constant="50" id="7aH-jJ-uLx"/>
                             <constraint firstItem="608-yu-uyP" firstAttribute="leading" secondItem="Zwp-Av-f4k" secondAttribute="leading" constant="20" id="BO9-00-kUq"/>
                             <constraint firstItem="Zwp-Av-f4k" firstAttribute="trailing" secondItem="608-yu-uyP" secondAttribute="trailing" constant="20" id="CaN-zk-a5b"/>
                             <constraint firstItem="Tjx-WP-j2u" firstAttribute="centerX" secondItem="Zwp-Av-f4k" secondAttribute="centerX" id="ELG-lJ-tnT"/>
@@ -157,11 +159,10 @@
                             <constraint firstItem="W57-HR-BwU" firstAttribute="top" secondItem="vhO-lu-yNe" secondAttribute="bottom" id="L1C-M3-r8e"/>
                             <constraint firstItem="RTI-XU-NiE" firstAttribute="top" secondItem="608-yu-uyP" secondAttribute="bottom" constant="10" id="QTd-br-vuS"/>
                             <constraint firstItem="vhO-lu-yNe" firstAttribute="top" secondItem="608-yu-uyP" secondAttribute="bottom" id="TTV-NG-QDk"/>
+                            <constraint firstItem="vhO-lu-yNe" firstAttribute="centerY" secondItem="RTI-XU-NiE" secondAttribute="centerY" id="XPl-fC-y1W"/>
                             <constraint firstItem="Zwp-Av-f4k" firstAttribute="trailing" secondItem="W57-HR-BwU" secondAttribute="trailing" id="aDa-yz-oMc"/>
                             <constraint firstItem="vhO-lu-yNe" firstAttribute="leading" secondItem="Zwp-Av-f4k" secondAttribute="leading" constant="10" id="cBh-IQ-MlQ"/>
-                            <constraint firstItem="vhO-lu-yNe" firstAttribute="centerY" secondItem="RTI-XU-NiE" secondAttribute="centerY" id="cXs-NC-PZR"/>
                             <constraint firstItem="Zwp-Av-f4k" firstAttribute="trailing" secondItem="RTI-XU-NiE" secondAttribute="trailing" constant="10" id="n00-eZ-rG8"/>
-                            <constraint firstItem="Tjx-WP-j2u" firstAttribute="top" secondItem="W57-HR-BwU" secondAttribute="bottom" constant="50" id="p6h-uf-sOq"/>
                             <constraint firstItem="W57-HR-BwU" firstAttribute="leading" secondItem="Zwp-Av-f4k" secondAttribute="leading" id="qRr-pM-7c6"/>
                         </constraints>
                     </view>
