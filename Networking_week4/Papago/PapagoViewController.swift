@@ -48,6 +48,12 @@ class PapagoViewController: UIViewController {
         settingOriginalTextView()
         settingtranslateTextView()
         settingPicker()
+        cancelBtn.addTarget(self, action: #selector(cancelBtnClicked(_:)), for: .touchUpInside)
+    }
+    
+    @objc func cancelBtnClicked(_ sender: UIButton) {
+        originalTextView.text = ""
+        translateTextView.text = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -201,14 +207,7 @@ extension PapagoViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerList.count
     }
-    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//
-//        let valueArray = pickerList.values.map { $0 }
-//
-//        return valueArray[row]
-//    }
-    
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("tag : \(pickerView.tag)")
         
