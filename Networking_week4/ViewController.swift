@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     var movieList: [Movie] = []
     
+    @IBOutlet var searchBar: UISearchBar!
+    
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
     
     @IBOutlet var tableView: UITableView!
     
@@ -28,12 +31,15 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 60
-        callRequest()
+        searchBar.delegate = self
+        indicatorView.isHidden = true
     }
 
-    func callRequest() {
+    func callRequest(date: String) {
+        indicatorView.startAnimating()
+        indicatorView.isHidden = false
         
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=20120101"
+        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=\(date)"
         
         // SwiftyJSON을 사용해서 Alamofire와 같이 활용해서 쉽게 데이터 통신을 할 수 있음
         // method: .get은 데이터를 읽어오는것
@@ -69,6 +75,8 @@ class ViewController: UIViewController {
                  => 타임 설정 가능 의도적으로 실패로 넘겨서 다시 시도 유도해 볼 수 있음
                 
                  */
+                self.indicatorView.stopAnimating()
+                self.indicatorView.isHidden = true
                 self.tableView.reloadData()
                 
             case .failure(let error):
@@ -89,5 +97,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.detailTextLabel?.text = movieList[indexPath.row].release
         return cell
     }
+    
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // 20220101 > 1. 8글자 2. 202232333 올바른 날짜 3. 날짜 범주
+        callRequest(date: searchBar.text!)
+        
+        
+        
+        
+    }
+    
     
 }
