@@ -19,8 +19,17 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callRequest()
         
+        UserDefaultsHelper.standard.nickname
+        // helper.age
+        
+        callRequest()
+        UserDefaults.standard.set("홍길동", forKey: "nickname")
+        UserDefaults.standard.set(33, forKey: "age")
+        
+        
+        UserDefaults.standard.string(forKey: "nickname")
+        UserDefaults.standard.string(forKey: "age")
     }
     
     func callRequest() {

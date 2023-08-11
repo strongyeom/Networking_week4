@@ -24,6 +24,7 @@
 		26E5EA1C2A81E79600CCDF90 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5EA1B2A81E79600CCDF90 /* VideoViewController.swift */; };
 		26E862C72A83230600DC9D8F /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E862C62A83230600DC9D8F /* VideoTableViewCell.swift */; };
 		26E9508C2A85BA9F0017EB88 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9508B2A85BA9F0017EB88 /* ReusableViewProtocol.swift */; };
+		26E9508F2A85BD000017EB88 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9508E2A85BD000017EB88 /* UserDefaultsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		26E5EA1B2A81E79600CCDF90 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		26E862C62A83230600DC9D8F /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		26E9508B2A85BA9F0017EB88 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		26E9508E2A85BD000017EB88 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				26C90BEC2A80966A000D03DF /* Info.plist */,
 				26C90BFB2A809BA3000D03DF /* .gitignore */,
 				26C90BFF2A809C58000D03DF /* APIKey.swift */,
+				26E9508E2A85BD000017EB88 /* UserDefaultsHelper.swift */,
 			);
 			path = Networking_week4;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				26C90BDF2A809668000D03DF /* AppDelegate.swift in Sources */,
 				2629BADE2A8476A200B5DA5A /* PapagoViewController.swift in Sources */,
 				26E862C72A83230600DC9D8F /* VideoTableViewCell.swift in Sources */,
+				26E9508F2A85BD000017EB88 /* UserDefaultsHelper.swift in Sources */,
 				26C90BE12A809668000D03DF /* SceneDelegate.swift in Sources */,
 				26E9508C2A85BA9F0017EB88 /* ReusableViewProtocol.swift in Sources */,
 				26C90C002A809C58000D03DF /* APIKey.swift in Sources */,
