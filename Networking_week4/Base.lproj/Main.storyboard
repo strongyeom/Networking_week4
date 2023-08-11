@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9xC-8O-kbf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qHY-Ue-nG8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -227,6 +227,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFk-ti-Umt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903" y="6"/>
+        </scene>
+        <!--Kakao KoGPT View Controller-->
+        <scene sceneID="wcq-ir-1Og">
+            <objects>
+                <viewController id="qHY-Ue-nG8" customClass="KakaoKoGPTViewController" customModule="Networking_week4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dTM-jQ-lEF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qrl-Q6-ah1">
+                                <rect key="frame" x="20" y="79" width="353" height="719"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ggo-A8-hnZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="314.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-Sy-FJj">
+                                        <rect key="frame" x="0.0" y="334.66666666666669" width="353" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Wa4-9t-LBu"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <connections>
+                                            <action selector="messageKoGPTBtnClicked:" destination="qHY-Ue-nG8" eventType="touchUpInside" id="1LP-M3-fDD"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4en-ds-cqr">
+                                        <rect key="frame" x="0.0" y="404.66666666666674" width="353" height="314.33333333333326"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4en-ds-cqr" firstAttribute="height" secondItem="ggo-A8-hnZ" secondAttribute="height" id="qXE-5G-Sm0"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MLN-YI-ySR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qrl-Q6-ah1" firstAttribute="top" secondItem="MLN-YI-ySR" secondAttribute="top" constant="20" id="3AZ-zf-BLb"/>
+                            <constraint firstItem="MLN-YI-ySR" firstAttribute="bottom" secondItem="Qrl-Q6-ah1" secondAttribute="bottom" constant="20" id="9ru-LX-7YX"/>
+                            <constraint firstItem="MLN-YI-ySR" firstAttribute="trailing" secondItem="Qrl-Q6-ah1" secondAttribute="trailing" constant="20" id="dfE-2D-bsb"/>
+                            <constraint firstItem="Qrl-Q6-ah1" firstAttribute="leading" secondItem="MLN-YI-ySR" secondAttribute="leading" constant="20" id="oml-Vx-c18"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="koGPTTextView" destination="4en-ds-cqr" id="8dE-D9-0Br"/>
+                        <outlet property="messageBtn" destination="9c6-Sy-FJj" id="Q4z-l3-pRF"/>
+                        <outlet property="requestTextView" destination="ggo-A8-hnZ" id="aqz-pQ-aCC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxK-Jh-bR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669" y="-656"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="1cL-0y-7Kz">
