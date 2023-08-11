@@ -14,6 +14,7 @@ class TranslateAPIManager {
     
     private init() { }
     
+    //@escaping : callRequest -> Alamofire -> global.async -> 함수 종료 이후에 매개변수를 실행시키고 싶다 / 없으면 함수가 종료됨에따라 클로저도 같이 종료된다.
     func callRequest(sourceText: String, targetText: String, text: String, resultString: @escaping (String) -> () ) {
         let url = "https://openapi.naver.com/v1/papago/n2mt"
         
