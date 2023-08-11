@@ -10,6 +10,7 @@
 		2629BADE2A8476A200B5DA5A /* PapagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629BADD2A8476A200B5DA5A /* PapagoViewController.swift */; };
 		268B5A4C2A84B2F100EAE11C /* KakaoKoGPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B5A4B2A84B2F100EAE11C /* KakaoKoGPTViewController.swift */; };
 		26BA559E2A85E36800FE9639 /* TranslateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA559D2A85E36800FE9639 /* TranslateAPIManager.swift */; };
+		26BA55A02A85F9EA00FE9639 /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA559F2A85F9EA00FE9639 /* AsyncViewController.swift */; };
 		26C90BDF2A809668000D03DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C90BDE2A809668000D03DF /* AppDelegate.swift */; };
 		26C90BE12A809668000D03DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C90BE02A809668000D03DF /* SceneDelegate.swift */; };
 		26C90BE32A809668000D03DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C90BE22A809668000D03DF /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		2629BADD2A8476A200B5DA5A /* PapagoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoViewController.swift; sourceTree = "<group>"; };
 		268B5A4B2A84B2F100EAE11C /* KakaoKoGPTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoKoGPTViewController.swift; sourceTree = "<group>"; };
 		26BA559D2A85E36800FE9639 /* TranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIManager.swift; sourceTree = "<group>"; };
+		26BA559F2A85F9EA00FE9639 /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = "<group>"; };
 		26C90BDB2A809668000D03DF /* Networking_week4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Networking_week4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C90BDE2A809668000D03DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26C90BE02A809668000D03DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				26E862C82A83230900DC9D8F /* KaKaoVideo */,
 				26E9508D2A85BAA40017EB88 /* Protocol */,
 				26C90BE42A809668000D03DF /* Main.storyboard */,
+				26BA559F2A85F9EA00FE9639 /* AsyncViewController.swift */,
 				26C90BE72A80966A000D03DF /* Assets.xcassets */,
 				26C90BE92A80966A000D03DF /* LaunchScreen.storyboard */,
 				26C90BEC2A80966A000D03DF /* Info.plist */,
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26E5EA1C2A81E79600CCDF90 /* VideoViewController.swift in Sources */,
+				26BA55A02A85F9EA00FE9639 /* AsyncViewController.swift in Sources */,
 				26E5EA1A2A81C4CE00CCDF90 /* WeatherViewController.swift in Sources */,
 				26C90BE32A809668000D03DF /* ViewController.swift in Sources */,
 				268B5A4C2A84B2F100EAE11C /* KakaoKoGPTViewController.swift in Sources */,

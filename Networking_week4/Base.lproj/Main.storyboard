@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9xC-8O-kbf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKH-eg-Bqz">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -288,6 +288,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxK-Jh-bR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1669" y="-656"/>
+        </scene>
+        <!--Async View Controller-->
+        <scene sceneID="OL7-cU-5kg">
+            <objects>
+                <viewController id="OKH-eg-Bqz" customClass="AsyncViewController" customModule="Networking_week4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ffM-RB-Ljj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FJU-qC-ihN">
+                                <rect key="frame" x="98.333333333333329" y="78.999999999999986" width="196.33333333333337" height="195.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FJU-qC-ihN" secondAttribute="height" constant="1" id="Gjj-6B-iYU"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vY-pr-zCB">
+                                <rect key="frame" x="76" y="318" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-ak-M7Y">
+                                <rect key="frame" x="76" y="488" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVV-HT-Mbt">
+                                <rect key="frame" x="114" y="660" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jle-sM-ctK">
+                                <rect key="frame" x="211" y="660" width="83" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="다운로드"/>
+                                <connections>
+                                    <action selector="downloadBtnClicked:" destination="OKH-eg-Bqz" eventType="touchUpInside" id="ke1-jc-Dgt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wzq-IV-gQg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FJU-qC-ihN" firstAttribute="width" secondItem="ffM-RB-Ljj" secondAttribute="width" multiplier="0.5" id="HMH-bT-dKB"/>
+                            <constraint firstItem="FJU-qC-ihN" firstAttribute="centerX" secondItem="Wzq-IV-gQg" secondAttribute="centerX" id="Qpi-gE-ETt"/>
+                            <constraint firstItem="FJU-qC-ihN" firstAttribute="top" secondItem="Wzq-IV-gQg" secondAttribute="top" constant="20" id="fp7-TU-qmX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="first" destination="FJU-qC-ihN" id="EEl-Hw-e4C"/>
+                        <outlet property="second" destination="0vY-pr-zCB" id="x87-Hv-BZm"/>
+                        <outlet property="third" destination="SyE-ak-M7Y" id="RJl-q6-NhB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="war-pT-RCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2672" y="-684"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="1cL-0y-7Kz">
