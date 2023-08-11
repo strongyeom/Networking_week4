@@ -48,6 +48,7 @@ class PapagoViewController: UIViewController {
         settingOriginalTextView()
         settingtranslateTextView()
         settingPicker()
+        
         cancelBtn.addTarget(self, action: #selector(cancelBtnClicked(_:)), for: .touchUpInside)
     }
     
@@ -121,23 +122,10 @@ extension PapagoViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
        
         if originalTextView.contentSize.height > textViewMaxHeight {
-            // print("텍스트 뷰가 👉넘어감")
-            self.textVIewHeightConstainsts.constant = textViewMaxHeight}
-           // self.view.layoutIfNeeded()
-//        } else {
-//            let newSize = originalTextView.sizeThatFits(originalTextView.frame.size)
-//
-//            textVIewHeightConstainsts.constant =  newSize.height
-//
-//            // 조건 이유 - 계속 bottomStackConstant 값이 newSize.height으로 변경되서 UI 망가짐
-//            if textVIewHeightConstainsts.constant < 60 {
-//                textVIewHeightConstainsts.constant = 60
-//            }
-//           // self.view.layoutIfNeeded()
-//        }
-//        TranslateAPIManager.shared.callRequest(sourceText: first, targetText: second, text: originalTextView.text ?? "") { resultString in
-//            self.translateTextView.text = resultString
-//        }
+            
+            self.textVIewHeightConstainsts.constant = textViewMaxHeight
+            
+        }
     }
    
     // 텍스트 필드 플레이스 홀더

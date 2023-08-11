@@ -28,8 +28,9 @@ class TranslateAPIManager {
             "target" : "\(targetText)",
             "text": text
         ]
+        print("first: \(sourceText), second: \(targetText)")
         
-        AF.request(url, method: .post, parameters: parameters, headers: header).validate().responseJSON { response in
+        AF.request(url, method: .post, parameters: parameters, headers: header).validate(statusCode: 200...500).responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
