@@ -23,6 +23,7 @@
 		26E5EA1A2A81C4CE00CCDF90 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5EA192A81C4CE00CCDF90 /* WeatherViewController.swift */; };
 		26E5EA1C2A81E79600CCDF90 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5EA1B2A81E79600CCDF90 /* VideoViewController.swift */; };
 		26E862C72A83230600DC9D8F /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E862C62A83230600DC9D8F /* VideoTableViewCell.swift */; };
+		26E9508C2A85BA9F0017EB88 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9508B2A85BA9F0017EB88 /* ReusableViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		26E5EA192A81C4CE00CCDF90 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		26E5EA1B2A81E79600CCDF90 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		26E862C62A83230600DC9D8F /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		26E9508B2A85BA9F0017EB88 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				268B5A4A2A84B2A000EAE11C /* KakaoKoGPT */,
 				2629BADF2A8477FA00B5DA5A /* Papago */,
 				26E862C82A83230900DC9D8F /* KaKaoVideo */,
+				26E9508D2A85BAA40017EB88 /* Protocol */,
 				26C90BE42A809668000D03DF /* Main.storyboard */,
 				26C90BE72A80966A000D03DF /* Assets.xcassets */,
 				26C90BE92A80966A000D03DF /* LaunchScreen.storyboard */,
@@ -132,6 +135,14 @@
 				26E862C62A83230600DC9D8F /* VideoTableViewCell.swift */,
 			);
 			path = KaKaoVideo;
+			sourceTree = "<group>";
+		};
+		26E9508D2A85BAA40017EB88 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				26E9508B2A85BA9F0017EB88 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 				2629BADE2A8476A200B5DA5A /* PapagoViewController.swift in Sources */,
 				26E862C72A83230600DC9D8F /* VideoTableViewCell.swift in Sources */,
 				26C90BE12A809668000D03DF /* SceneDelegate.swift in Sources */,
+				26E9508C2A85BA9F0017EB88 /* ReusableViewProtocol.swift in Sources */,
 				26C90C002A809C58000D03DF /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

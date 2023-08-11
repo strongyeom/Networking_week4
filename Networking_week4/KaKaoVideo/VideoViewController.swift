@@ -10,9 +10,6 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-// Todo - pagnation 구현
-
-
 struct Video {
     
     let auhor: String
