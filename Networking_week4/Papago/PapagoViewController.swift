@@ -109,36 +109,6 @@ class PapagoViewController: UIViewController {
         translateTextView.isEditable = false
     }
     
-    func callRequest(sourceText: String, targetText: String) {
-        translateTextView.text = ""
-        let url = "https://openapi.naver.com/v1/papago/n2mt"
-        let header: HTTPHeaders = [
-            "X-Naver-Client-Id" : "myXCWsXxrg83Q4L0SAdP",
-            "X-Naver-Client-Secret" : "2s8Jgd07Ij"
-        ]
-        
-        let parameters: Parameters = [
-            "source" : "\(sourceText)",
-            "target" : "\(targetText)",
-            "text": originalTextView.text ?? ""
-        ]
-        
-        AF.request(url, method: .post, parameters: parameters, headers: header).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                let tranlslateText = json["message"]["result"]["translatedText"].stringValue
-                
-                self.translateTextView.text = tranlslateText
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
 }
 
 // MARK: - UITextViewDelegate
@@ -161,7 +131,9 @@ extension PapagoViewController: UITextViewDelegate {
 //            }
 //           // self.view.layoutIfNeeded()
 //        }
-        callRequest(sourceText: first, targetText: second)
+        TranslateAPIManager.shared.callRequest(sourceText: first, targetText: second, text: originalTextView.text ?? "") { resultString in
+            self.translateTextView.text = resultString
+        }
     }
    
     // 텍스트 필드 플레이스 홀더

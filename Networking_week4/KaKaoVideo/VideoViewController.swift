@@ -46,68 +46,60 @@ class VideoViewController: UIViewController {
     }
     
     func callRequest(query: String, page: Int) {
-        // 한글에 대한 인식이 안되기 때문에 한글에 대한 처리를 해줘야함
-        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        
-        let url = "https://dapi.kakao.com/v2/search/vclip?query=\(text)&size=10&page=\(page)"
-        // headers - 딕셔너리 형태 헤더 이름 키 값 넣으면 됌
-        // 타입은 HTTPHeaders 맞춰야함
-        // 카카오는 .validate(statusCode: 200...500) : 실패 코드를 상세적으로 볼 수 있음
-        let header: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
-        
-        AF
-            .request(url, method: .get, headers: header)
-            .validate(statusCode: 200...500)
-            .responseJSON { response in
-            
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(url)")
-                
-                // 상태 코드에 대한 정보
-                print("response 상태 코드 : ", response.response?.statusCode)
-                
-                // 상태 코드 확인
-                let statusCode = response.response?.statusCode ?? 500
-                
-                
-                // 상태에 따른 분기 처리
-                if statusCode == 200 {
-                    
-                    // 마지막 페이지 인지 아닌지 확인
-                    self.isEnd = json["meta"]["is_end"].boolValue
-                    
-                    for item in json["documents"].arrayValue {
-                    
-                        let auhor = item["author"].stringValue
-                        let dateTime = item["datetime"].stringValue
-                        let playTime = item["play_time"].intValue
-                        let thumnail = item["thumbnail"].stringValue
-                        let title = item["title"].stringValue
-                        let link = item["url"].stringValue
-                        
-                        let data = Video(auhor: auhor, dateTime: dateTime, playTime: playTime, thumnail: thumnail, title: title, link: link)
-                        
-                        self.videoList.append(data)
-                    }
-                    print(self.videoList)
-                    self.tableView.reloadData()
-                } else {
-                    print("문제가 발생, 잠시 후 다시 시도해주세요")
-                }
-                
-               
-               
-            case .failure(let error):
-                print(error)
-            }
+        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
+            print("==== \(json)")
         }
     }
+    //        AF
+    //            .request(url, method: .get, headers: header)
+    //            .validate(statusCode: 200...500)
+    //            .responseJSON { response in
+    //
+    //            switch response.result {
+    //            case .success(let value):
+    //                let json = JSON(value)
+    //                print("JSON: \(url)")
+    //
+    //                // 상태 코드에 대한 정보
+    //                print("response 상태 코드 : ", response.response?.statusCode)
+    //
+    //                // 상태 코드 확인
+    //                let statusCode = response.response?.statusCode ?? 500
+    //
+    //
+    //                // 상태에 따른 분기 처리
+    //                if statusCode == 200 {
+    //
+    //                    // 마지막 페이지 인지 아닌지 확인
+    //                    self.isEnd = json["meta"]["is_end"].boolValue
+    //
+    //                    for item in json["documents"].arrayValue {
+    //
+    //                        let auhor = item["author"].stringValue
+    //                        let dateTime = item["datetime"].stringValue
+    //                        let playTime = item["play_time"].intValue
+    //                        let thumnail = item["thumbnail"].stringValue
+    //                        let title = item["title"].stringValue
+    //                        let link = item["url"].stringValue
+    //
+    //                        let data = Video(auhor: auhor, dateTime: dateTime, playTime: playTime, thumnail: thumnail, title: title, link: link)
+    //
+    //                        self.videoList.append(data)
+    //                    }
+    //                    print(self.videoList)
+    //                    self.tableView.reloadData()
+    //                } else {
+    //                    print("문제가 발생, 잠시 후 다시 시도해주세요")
+    //                }
+    //
+    //
+    //
+    //            case .failure(let error):
+    //                print(error)
+    //            }
+    //        }
     
 }
-
 extension VideoViewController: UISearchBarDelegate {
     
     // ‼️ 네트워크시 실시간 호출 보다는 return키를 활용해서 서버 통신
