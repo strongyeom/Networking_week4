@@ -37,7 +37,7 @@ class KakaoAPIManager {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(url)")
+                print("JSON: \(url)") // 여기서 끝남
                 completionHandler(json)
                
             case .failure(let error):

@@ -13,6 +13,7 @@ class UserDefaultsHelper {
     static let standard = UserDefaultsHelper() // 싱글톤 패턴
     // 외부에서 초기화에 접근 할 수 없게 제한하는 접근 제어자
     private init() { }
+    
     let userDefaults = UserDefaults.standard
     // UserDefaultsHelper 파일내에서 한정적으로 사용할때 클래스,구조체 안에서 셋팅 -> 처리 할 수 있는 시간 (컴파일 시간) 자체가 줄어듬 => 컴파일 최적화
     
@@ -20,6 +21,7 @@ class UserDefaultsHelper {
         case nickname, age
     }
     
+    // 연산 프로퍼티를 사용하면 get과 set를 사용하여 함수를 추가적으로 구현하지 않아도 된다.
     var nickname: String {
         get {
             return userDefaults.string(forKey: Key.nickname.rawValue) ?? "대장"

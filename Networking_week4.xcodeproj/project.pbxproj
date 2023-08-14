@@ -30,6 +30,7 @@
 		26E950912A85C5110017EB88 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E950902A85C5110017EB88 /* EndPoint.swift */; };
 		26E950932A85C5C80017EB88 /* Ext+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E950922A85C5C80017EB88 /* Ext+URL.swift */; };
 		26E950952A85C77C0017EB88 /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E950942A85C77C0017EB88 /* KakaoAPIManager.swift */; };
+		26EF37002A8A02610039F230 /* BoxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF36FF2A8A02610039F230 /* BoxOfficeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		26E950902A85C5110017EB88 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		26E950922A85C5C80017EB88 /* Ext+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+URL.swift"; sourceTree = "<group>"; };
 		26E950942A85C77C0017EB88 /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
+		26EF36FF2A8A02610039F230 /* BoxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				26C90BEC2A80966A000D03DF /* Info.plist */,
 				26C90BFB2A809BA3000D03DF /* .gitignore */,
 				26C90BFF2A809C58000D03DF /* APIKey.swift */,
+				26EF36FF2A8A02610039F230 /* BoxOfficeData.swift */,
 				26E9508E2A85BD000017EB88 /* UserDefaultsHelper.swift */,
 				26E950902A85C5110017EB88 /* EndPoint.swift */,
 				26E950922A85C5C80017EB88 /* Ext+URL.swift */,
@@ -254,6 +257,7 @@
 				26C90BDF2A809668000D03DF /* AppDelegate.swift in Sources */,
 				2629BADE2A8476A200B5DA5A /* PapagoViewController.swift in Sources */,
 				26E950932A85C5C80017EB88 /* Ext+URL.swift in Sources */,
+				26EF37002A8A02610039F230 /* BoxOfficeData.swift in Sources */,
 				26E950912A85C5110017EB88 /* EndPoint.swift in Sources */,
 				26E862C72A83230600DC9D8F /* VideoTableViewCell.swift in Sources */,
 				26E9508F2A85BD000017EB88 /* UserDefaultsHelper.swift in Sources */,
