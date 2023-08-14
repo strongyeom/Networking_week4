@@ -16,7 +16,7 @@ struct Movie {
 
 
 class ViewController: UIViewController {
-
+    
     
     var movieList: [Movie] = []
     //codable
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         indicatorView.isHidden = true
     }
-
+    
     func callRequest(date: String) {
         indicatorView.startAnimating()
         indicatorView.isHidden = false
@@ -51,7 +51,11 @@ class ViewController: UIViewController {
             .responseDecodable(of: BoxOffice.self) { response in
                 self.resultMovie = response.value
                 print("resultMovie",self.resultMovie!)
+                self.indicatorView.stopAnimating()
+                self.indicatorView.isHidden = true
+                
                 self.tableView.reloadData()
+                
             }
         
         
@@ -59,55 +63,54 @@ class ViewController: UIViewController {
         
         
         
-//            .responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//                print("JSON: \(json)")
-//
-//                // JSON에서 원하는 것에 도달하려면 차근차근(단계별로) 타고 내려가야함
-////                let name1 = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
-////                let name2 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
-////                let name3 = json["boxOfficeResult"]["dailyBoxOfficeList"][2]["movieNm"].stringValue
-////
-////                self.movieList.append(contentsOf: [name1, name2, name3])
-////
-//                for item in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
-//                    let movieNm = item["movieNm"].stringValue
-//                    let openDt = item["openDt"].stringValue
-//                    let data = Movie(title: movieNm, release: openDt)
-//                    self.movieList.append(data)
-//                }
-//
-////                for i in 0..<json["boxOfficeResult"]["dailyBoxOfficeList"].count {
-////                    let movieNm = json["boxOfficeResult"]["dailyBoxOfficeList"][i]["movieNm"].stringValue
-////                    self.movieList.append(movieNm)
-////                }
-//                /*
-//                 error : "The request timed out."
-//                 네트워크 응답 시간 너무 길어진다면 네트워크 성공이라고 볼 수 없음
-//                 (타임 아웃 defaults 대략 60초)
-//                 => 타임 설정 가능 의도적으로 실패로 넘겨서 다시 시도 유도해 볼 수 있음
-//
-//                 */
-//                self.indicatorView.stopAnimating()
-//                self.indicatorView.isHidden = true
-//                self.tableView.reloadData()
-//
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+        //            .responseJSON { response in
+        //            switch response.result {
+        //            case .success(let value):
+        //                let json = JSON(value)
+        //                print("JSON: \(json)")
+        //
+        //                // JSON에서 원하는 것에 도달하려면 차근차근(단계별로) 타고 내려가야함
+        ////                let name1 = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
+        ////                let name2 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
+        ////                let name3 = json["boxOfficeResult"]["dailyBoxOfficeList"][2]["movieNm"].stringValue
+        ////
+        ////                self.movieList.append(contentsOf: [name1, name2, name3])
+        ////
+        //                for item in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
+        //                    let movieNm = item["movieNm"].stringValue
+        //                    let openDt = item["openDt"].stringValue
+        //                    let data = Movie(title: movieNm, release: openDt)
+        //                    self.movieList.append(data)
+        //                }
+        //
+        ////                for i in 0..<json["boxOfficeResult"]["dailyBoxOfficeList"].count {
+        ////                    let movieNm = json["boxOfficeResult"]["dailyBoxOfficeList"][i]["movieNm"].stringValue
+        ////                    self.movieList.append(movieNm)
+        ////                }
+        //                /*
+        //                 error : "The request timed out."
+        //                 네트워크 응답 시간 너무 길어진다면 네트워크 성공이라고 볼 수 없음
+        //                 (타임 아웃 defaults 대략 60초)
+        //                 => 타임 설정 가능 의도적으로 실패로 넘겨서 다시 시도 유도해 볼 수 있음
+        //
+        //                 */
         
-    }
+        //                self.tableView.reloadData()
+        //
+        //            case .failure(let error):
+        //                print(error)
+        //            }
+        //        }
 
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return resultMovie?.boxOfficeResult?.dailyBoxOfficeList!.count ?? 0
+        guard let result = resultMovie?.boxOfficeResult?.dailyBoxOfficeList else { return 0 }
+        return result.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
