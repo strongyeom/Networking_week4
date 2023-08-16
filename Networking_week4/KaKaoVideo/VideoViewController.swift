@@ -29,6 +29,10 @@ class VideoViewController: UIViewController {
     
     var videoList: KakaoVideo = KakaoVideo(documents: [])
     
+    
+    
+    
+    
     var page: Int = 1
     var isEnd = false // 현재 페이지가 마지막 페이지인지 점검하는 프로퍼티
     @IBOutlet var searchBar: UISearchBar!
@@ -46,18 +50,18 @@ class VideoViewController: UIViewController {
     }
     
     func callRequest(query: String, page: Int) {
-//        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
-//            print("==== \(json)")
-//        }
-       
+
         KakaoAPIManager.shared.callRequest(type: .video, query: query, page: page) { result in
          
             
             guard let result else { return }
-            print("result.documents",result.documents)
             self.videoList.documents.append(contentsOf: result.documents)
             self.tableView.reloadData()
         }
+        //        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
+        //            print("==== \(json)")
+        //        }
+               
         
     }
     //        AF

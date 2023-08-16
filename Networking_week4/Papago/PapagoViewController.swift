@@ -53,11 +53,15 @@ class PapagoViewController: UIViewController {
     }
     
     @objc func cancelBtnClicked(_ sender: UIButton) {
-        originalTextView.text = ""
-        translateTextView.text = ""
+//        originalTextView.text = ""
+//        translateTextView.text = ""
         
-        TranslateAPIManager.shared.callRequest(sourceText: first, targetText: second, text: originalTextView.text ?? "") { resultString in
-            self.translateTextView.text = resultString
+//        TranslateAPIManager.shared.callRequest(sourceText: first, targetText: second, text: originalTextView.text ?? "") { resultString in
+//            self.translateTextView.text = resultString
+//        }
+        
+        TranslateAPIManager.shared.callRequest(sourceText: first, targetText: second, text: originalTextView.text ?? "") { result in
+            self.translateTextView.text = result?.message.result.translatedText
         }
     }
     
