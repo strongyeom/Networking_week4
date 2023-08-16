@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2629BADE2A8476A200B5DA5A /* PapagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629BADD2A8476A200B5DA5A /* PapagoViewController.swift */; };
+		264669CE2A8C919600D771BA /* KakaoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264669CD2A8C919600D771BA /* KakaoVideo.swift */; };
 		268B5A4C2A84B2F100EAE11C /* KakaoKoGPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B5A4B2A84B2F100EAE11C /* KakaoKoGPTViewController.swift */; };
 		26BA559E2A85E36800FE9639 /* TranslateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA559D2A85E36800FE9639 /* TranslateAPIManager.swift */; };
 		26BA55A02A85F9EA00FE9639 /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA559F2A85F9EA00FE9639 /* AsyncViewController.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		2629BADD2A8476A200B5DA5A /* PapagoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoViewController.swift; sourceTree = "<group>"; };
+		264669CD2A8C919600D771BA /* KakaoVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoVideo.swift; sourceTree = "<group>"; };
 		268B5A4B2A84B2F100EAE11C /* KakaoKoGPTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoKoGPTViewController.swift; sourceTree = "<group>"; };
 		26BA559D2A85E36800FE9639 /* TranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIManager.swift; sourceTree = "<group>"; };
 		26BA559F2A85F9EA00FE9639 /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				26E5EA1B2A81E79600CCDF90 /* VideoViewController.swift */,
 				26E862C62A83230600DC9D8F /* VideoTableViewCell.swift */,
+				264669CD2A8C919600D771BA /* KakaoVideo.swift */,
 			);
 			path = KaKaoVideo;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				26E950912A85C5110017EB88 /* EndPoint.swift in Sources */,
 				26E862C72A83230600DC9D8F /* VideoTableViewCell.swift in Sources */,
 				26E9508F2A85BD000017EB88 /* UserDefaultsHelper.swift in Sources */,
+				264669CE2A8C919600D771BA /* KakaoVideo.swift in Sources */,
 				26C90BE12A809668000D03DF /* SceneDelegate.swift in Sources */,
 				26BA559E2A85E36800FE9639 /* TranslateAPIManager.swift in Sources */,
 				26E9508C2A85BA9F0017EB88 /* ReusableViewProtocol.swift in Sources */,

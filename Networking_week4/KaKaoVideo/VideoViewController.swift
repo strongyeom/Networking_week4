@@ -10,25 +10,25 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-struct Video {
-    
-    let auhor: String
-    let dateTime: String
-    let playTime: Int
-    let thumnail: String
-    let title: String
-    let link: String
-    
-    var contents: String {
-        return "\(auhor) | \(playTime)회\n \(dateTime)"
-    }
-
-}
+//struct Video {
+//
+//    let auhor: String
+//    let dateTime: String
+//    let playTime: Int
+//    let thumnail: String
+//    let title: String
+//    let link: String
+//
+//    var contents: String {
+//        return "\(auhor) | \(playTime)회\n \(dateTime)"
+//    }
+//}
 
 
 class VideoViewController: UIViewController {
     
-    var videoList: [Video] = []
+    var videoList: KakaoVideo = KakaoVideo(documents: [])
+    
     var page: Int = 1
     var isEnd = false // 현재 페이지가 마지막 페이지인지 점검하는 프로퍼티
     @IBOutlet var searchBar: UISearchBar!
@@ -46,9 +46,19 @@ class VideoViewController: UIViewController {
     }
     
     func callRequest(query: String, page: Int) {
-        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
-            print("==== \(json)")
+//        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
+//            print("==== \(json)")
+//        }
+       
+        KakaoAPIManager.shared.callRequest(type: .video, query: query, page: page) { result in
+         
+            
+            guard let result else { return }
+            print("result.documents",result.documents)
+            self.videoList.documents.append(contentsOf: result.documents)
+            self.tableView.reloadData()
         }
+        
     }
     //        AF
     //            .request(url, method: .get, headers: header)
@@ -109,7 +119,7 @@ extension VideoViewController: UISearchBarDelegate {
         
         // page 초기화시켜서 다른 검색어를 입력했을때 페이지 1부터 나올 수 있도록 설정
         page = 1
-        self.videoList.removeAll()
+         self.videoList.documents.removeAll()
         
         guard let query = searchBar.text else { return }
         
@@ -129,12 +139,17 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     
     // 셀이 화면에 보이기 직전에 필요한 리소스를 미리 다운 받는 기능
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+       
+      //  guard let videoList = videoList else { return }
         
         for indexPath in indexPaths {
             // 배열의 갯수와 indexPath.row 같아 졌을때(0부터 시작) 실행
             // page : 카카오 같은 경우에는 페이지 제한이 있음
             // isEnd : 마지막 페이지 인지 아닌지
-            if videoList.count - 1 == indexPath.row && page < 15 && isEnd == false {
+            print("prefetchRowsAt \(videoList.documents.count - 1), row: \(indexPath.row) page: \(page)")
+            dump(videoList.documents)
+            print("prefetchRowsAt - documents 갯수: \(videoList.documents.count)")
+            if videoList.documents.count - 1 == indexPath.row && page < 15 && isEnd == false {
                 // 페이지 증가
                 page += 1
                 // 증가된 페이지 매개변수로 넣어서 다시 서칭
@@ -151,17 +166,20 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return videoList.count
+       // guard let videoList else { return 0 }
+        print("videoList.documents.count",videoList.documents.count)
+        return videoList.documents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier, for: indexPath) as? VideoTableViewCell else { return UITableViewCell() }
         
-        let row = videoList[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier, for: indexPath) as? VideoTableViewCell else { return UITableViewCell() }
+       //  guard let videoList else { return UITableViewCell() }
+        let row = videoList.documents[indexPath.row]
         cell.videoname.text = row.title
         cell.playtime.text = row.contents
         
-        if let url = URL(string: row.thumnail) {
+        if let url = URL(string: row.thumbnail) {
             cell.videoImage.kf.setImage(with: url)
         }
         

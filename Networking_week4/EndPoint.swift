@@ -19,7 +19,7 @@ enum EndPoint {
         case .cafe:
             return URL.makeEndPointString("cafe?query=")
         case .video:
-            return URL.makeEndPointString("vclip?query")
+            return URL.makeEndPointString("vclip?query=")
             
         }
     }

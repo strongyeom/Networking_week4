@@ -19,31 +19,35 @@ class KakaoAPIManager {
     // 타입은 HTTPHeaders 맞춰야함
     let header: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
     
-    func callRequest(type: EndPoint, query: String, completionHandler: @escaping (JSON) -> () ) {
+    func callRequest(type: EndPoint, query: String, page: Int, completionHandler: @escaping (KakaoVideo?) -> () ) {
         
         // 한글에 대한 인식이 안되기 때문에 한글에 대한 처리를 해줘야함
         let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         
-        let url = type.requestURL + text
+        let url = type.requestURL + text + "&page=\(page)"
 
         // 카카오는 .validate(statusCode: 200...500) : 실패 코드를 상세적으로 볼 수 있음
-        
+        print("prefetchRowsAt - url",url)
         AF
             .request(url, method: .get, headers: header)
             .validate(statusCode: 200...500)
-            .responseJSON { response in
-            
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(url)") // 여기서 끝남
-                completionHandler(json)
-               
-            case .failure(let error):
-                print(error)
+            .responseDecodable(of: KakaoVideo.self) { response in
+                print("APIManger: \(response.value)")
+                completionHandler(response.value)
             }
-        }
+//            .responseJSON { response in
+//
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//                print("JSON: \(url)") // 여기서 끝남
+//                completionHandler(json)
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
     }
     
