@@ -54,18 +54,10 @@ class KakaoKoGPTViewController: UIViewController {
         }
         let parameter = Parameter(prompt: requestTextView.text ?? "오늘 날씨는", max_tokens: 120)
   
-        AF.request(url, method: .post, parameters: parameter, encoder: JSONParameterEncoder.default, headers: header).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                let answerGPT = json["generations"][0]["text"].stringValue
-                
-                self.koGPTTextView.text = answerGPT
-            case .failure(let error):
-                print(error)
+        AF.request(url, method: .post, parameters: parameter, encoder: JSONParameterEncoder.default, headers: header).validate()
+            .responseDecodable(of: KoGPT.self) { result in
+                self.koGPTTextView.text = result.value?.generations[0].text
             }
-        }
     }
 
 }
